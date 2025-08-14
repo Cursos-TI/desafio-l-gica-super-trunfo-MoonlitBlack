@@ -28,7 +28,7 @@ int main(){
     printf("     Super Trunfo: Cidades    \n");
     printf("==============================\n\n");
 
-    // --- ENTRADA DE DADOS ---
+    //  ENTRADA DE DADOS 
     printf("--- Carta 1 ---\n");
     printf("Digite o estado da carta 1 (EX: SP): ");
     scanf("%2s", estado1);
@@ -63,7 +63,7 @@ int main(){
     scanf("%lf", &pib2);
     printf("\n");
 
-    // --- CÁLCULO DE ATRIBUTOS DERIVADOS ---
+    // CÁLCULO DE ATRIBUTOS DERIVADOS
     double densidade_popula1, pib_per1, densidade_popula2, pib_per2;
     
     // Verificação de divisão por zero
@@ -88,7 +88,7 @@ int main(){
         pib_per2 = 0.0;
     }
     
-    // --- LÓGICA DE ESCOLHA DOS ATRIBUTOS ---
+    //  LÓGICA DE ESCOLHA DOS ATRIBUTOS 
     printf("Escolha o PRIMEIRO atributo a ser comparado:\n");
     printf("1. População\n2. Área\n3. Pontos turísticos\n4. PIB\n5. Densidade populacional (menor vence)\n6. PIB per capita\n");
     printf(">> ");
@@ -107,7 +107,7 @@ int main(){
         }
     } while (escolha1 == escolha2 || escolha2 < 1 || escolha2 > 6);
 
-    // --- OBTENÇÃO DOS VALORES ESCOLHIDOS ---
+    //  OBTENÇÃO DOS VALORES ESCOLHIDOS 
     switch (escolha1)
     {
         case 1:
@@ -164,7 +164,7 @@ int main(){
             break;
     }
 
-    // --- COMPARAÇÃO INDIVIDUAL DE CADA ATRIBUTO ---
+    // COMPARAÇÃO INDIVIDUAL DE CADA ATRIBUTO 
     // Comparação do primeiro atributo
     if (escolha1 == 5) { // Regra especial para densidade: menor vence
         resultado_attr1 = (valor1_carta1 < valor1_carta2) ? 1 : (valor1_carta2 < valor1_carta1) ? 2 : 0;
@@ -179,12 +179,12 @@ int main(){
         resultado_attr2 = (valor2_carta1 > valor2_carta2) ? 1 : (valor2_carta2 > valor2_carta1) ? 2 : 0;
     }
 
-    // --- EXIBIÇÃO DOS RESULTADOS ---
+    // EXIBIÇÃO DOS RESULTADOS 
     printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     printf("      Resultado da Comparação\n");
     printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
     
-    printf("--- Resultados Individuais ---\n");
+    printf(" Resultados Individuais \n");
     printf("Atributo %d: ", escolha1);
     if(resultado_attr1 == 1) {
         printf("Carta 1 Venceu (%.2f vs %.2f)\n", valor1_carta1, valor1_carta2);
